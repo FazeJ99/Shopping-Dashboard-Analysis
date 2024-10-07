@@ -32,7 +32,7 @@ def run():
         df.set_index("Customer_ID", inplace=True)
         return df
 
-    df = load_data("shopping_trends_updated.csv")
+    df = load_data("data/shopping_trends_updated.csv")
 
     st.markdown(
         """
@@ -203,17 +203,17 @@ def run():
                 left_col, mid_col, right_col = st.columns(3)
 
                 with left_col:
-                    st.image("imgs/dollar.png", caption="", width=70)
+                    st.image("images/dollar.png", caption="", width=70)
                     st.subheader("Total Sales")
                     st.subheader(products.total_sales(df_filtered))
 
                 with mid_col:
-                    st.image("imgs/clothes.png", width=70)
+                    st.image("images/clothes.png", width=70)
                     st.subheader("Categories")
                     st.subheader(products.number_of_category(df))
 
                 with right_col:
-                    st.image("imgs/online-shopping.png", width=70)
+                    st.image("images/online-shopping.png", width=70)
                     st.subheader("Products")
                     st.subheader(products.number_of_products(df_filtered))
                 st.markdown("---")
